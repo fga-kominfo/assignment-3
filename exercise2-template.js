@@ -14,7 +14,7 @@ function threeStepsAB(text) {
     // your code here
     //looping text
     for (let i = 0; i < text.length; i++) {
-        //jika ada a dan b yang berjarak 4 karakter maka return true
+        //jika ada a dan b yang berjarak 3 karakter maka return true
         if (text[i] === 'a' && text[i + 4] === 'b' || text[i] === 'b' && text[i + 4] === 'a') {
             return true;
         }
