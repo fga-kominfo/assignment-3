@@ -8,6 +8,20 @@
 
 function sumArray(arr, int) {
   // your code here
+  let result = [];
+  let hashMap = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let pair = int - arr[i];
+
+    if (pair in hashMap) {
+      result.push([pair, arr[i]]);
+    }
+
+    hashMap[arr[i]] = i;
+  }
+
+  return result;
 }
 
 // Test Cases
