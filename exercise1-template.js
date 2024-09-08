@@ -1,0 +1,36 @@
+/**
+   Diberikan sebuah function yang menerima satu parameter berupa array yang terdiri dari angka. 
+   Function tersebutakan mengembalikan true, jika array dari parameter tersebut merupakan deret aritmatika 
+      dan false jika sebaliknya.
+    
+    Deret aritmatika adalah sebuah deret dimana perbedaan setiap angka di deret tersebut konsisten. 
+    Contoh: 
+    - 2, 4,6, 8 adalah deret aritmatika dengan pertambahan nilai sebesar 2, 
+    - 2, 4, 6, 9 bukanlah deret aritmatika karena ada perbedaan selisih antar angka yang tidak konsisten.
+
+ */
+
+    function isArithmeticProgression(numbers) {
+      // Jika array berisi kurang dari 2 angka, return true karena tidak bisa memeriksa deret
+      if (numbers.length < 2) return true;
+      
+      // Hitung selisih antara angka pertama dan kedua
+      const diff = numbers[1] - numbers[0];
+      
+      // Periksa apakah setiap perbedaan antara angka berturut-turut sama dengan diff
+      for (let i = 1; i < numbers.length - 1; i++) {
+          if (numbers[i + 1] - numbers[i] !== diff) {
+              return false;
+          }
+      }
+      
+      return true; // Jika semua perbedaan sama, return true
+  }
+  
+  // Test Cases
+  console.log(isArithmeticProgression([1, 2, 3, 4, 5, 6])); // true
+  console.log(isArithmeticProgression([2, 4, 6, 12, 24])); // false
+  console.log(isArithmeticProgression([2, 4, 6, 8])); // true
+  console.log(isArithmeticProgression([2, 6, 18, 54])); // false
+  console.log(isArithmeticProgression([1, 2, 3, 4, 7, 9])); // false
+  
