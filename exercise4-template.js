@@ -16,6 +16,34 @@ Nilai 7  merupakan jumlah atau sum dari subarray  [ 4, -1, -2, 1, 5]
 
 function subArray(arr) {
   // your code here
+  let maxSum = -Infinity;
+  let currentSum = 0;
+  let result = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    currentSum += arr[i];
+
+    if (currentSum > maxSum) {
+      maxSum = currentSum;
+
+      result.start = result.end || 0;
+      result.end = i;
+      result.sum = maxSum;
+    }
+
+    if (currentSum < 0) {
+      currentSum = 0;
+      result.end = i + 1;
+    }
+  }
+
+  let subArrayResult = [];
+
+  for (let i = result.start; i <= result.end; i++) {
+    subArrayResult.push(arr[i]);
+  }
+
+  return [subArrayResult, result.sum];
 }
 
 // Test Case
