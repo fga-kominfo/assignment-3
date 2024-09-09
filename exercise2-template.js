@@ -12,18 +12,21 @@ bacon sand meat akan mengembalikan nilai false
 
 function threeStepsAB(text) {
   // your code here
-  let aIndex = -1;
-  let bIndex = -1;
+  let tempA = -1;
+  let tempB = -1;
+
   for (let i = 0; i < text.length; i++) {
-    if (text[i] === "a") {
-      aIndex = i;
-    } else if (text[i] === "b") {
-      bIndex = i;
-      if (aIndex !== -1 && bIndex - aIndex >= 3) {
-        return true;
-      }
+    if (text[i].toLowerCase() === "a") {
+      tempA = i;
+    } else if (text[i].toLowerCase() === "b") {
+      tempB = i;
+    }
+
+    if (tempA !== -1 && tempB !== -1 && Math.abs(tempA - tempB) === 4) {
+      return true;
     }
   }
+
   return false;
 }
 
