@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sesi-24 Testing</title>
+
+    <!-- load css qunit -->
+    <link rel="stylesheet" href="qunit.css" />
+
+    <!-- load js qunit -->
+    <script src="qunit.js"></script>
+
+    <!-- load js function -->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Unit Test dengan QUnit</h1>
+
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <script>
+      QUnit.module("Aritmetika", function () {
+        QUnit.test("Penjumlahan", function (assert) {
+          assert.equal(add(1, 1), 2, "1 + 1 hasilnya adalah 2"); // Memperbaiki pesan kesalahan
+          assert.equal(add(-1, 1), 0, "-1 + 1 hasilnya adalah 0"); // Memperbaiki pesan kesalahan
+        });
+        QUnit.test("Pengurangan", function (assert) {
+          assert.equal(subtract(1, 1), 0, "1 - 1 hasilnya adalah 0"); // Memperbaiki pesan kesalahan
+          assert.equal(subtract(-1, 1), -2, "-1 - 1 hasilnya adalah -2"); // Memperbaiki pesan kesalahan
+        });
+      });
+    </script>
+  </body>
+</html>
