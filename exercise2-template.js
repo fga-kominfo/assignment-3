@@ -11,7 +11,15 @@ bacon sand meat akan mengembalikan nilai false
  */ 
 
 function threeStepsAB(text) {
-    // your code here
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === 'a' && text[i + 4] === 'b') {
+            return true;
+        }
+        if (text[i] === 'b' && text[i + 4] === 'a') {
+            return true;
+        }
+    }
+    return false;
 }
 
 // Test Cases

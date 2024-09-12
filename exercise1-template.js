@@ -11,7 +11,16 @@
  */
 
 function isArithmeticProgression(numbers) {
-    // your code here
+
+    if (numbers.length < 2) return true;
+
+    const difference = numbers[1] - numbers[0];
+    for (let i = 2; i < numbers.length; i++) {
+        if (numbers[i] - numbers[i - 1] !== difference) {
+            return false;
+        }
+    }
+    return true;
 }
 
 // Test Cases
