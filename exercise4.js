@@ -2,8 +2,8 @@ function subArray(arr) {
     let max_current = arr[0];
     let max_global = arr[0];
     let start = 0;
-    end = 0;
-    s = 0;
+    let end = 0;
+    let s = 0;
 
     for (let i = 1; i < arr.length; i++) {
         if (arr[i] > max_current + arr[i]) {
